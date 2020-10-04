@@ -10,7 +10,7 @@ struct Trojuhelnik {
 		this->c = c;
 	}
 
-	bool lzeSestrojit(Trojuhelnik t) {
+	bool lzeSestrojit(Trojuhelnik* t) {
 		if (a + b > c && a + c > b && b + c > a)
 		{
 			return true;

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char** argv) {
 
 	int a, b, c;
 
@@ -22,9 +22,13 @@ int main() {
 
 	Trojuhelnik* ukazatel = &trojuhelnik;
 
-	if (trojuhelnik.lzeSestrojit(trojuhelnik))
+	ukazatel->a = a;
+	ukazatel->b = b;
+	ukazatel->c = c;
+
+	if (trojuhelnik.lzeSestrojit(ukazatel))
 	{
-		cout << "Trojuhelnik lze sestrojit, obvod je " << a + b + c << "." << endl;
+		cout << "Trojuhelnik lze sestrojit, obvod je " << ukazatel->a+ukazatel->b+ukazatel->c << "." << endl;
 	}
 	else
 	{
