@@ -7,16 +7,21 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamickaPamet", "Dynamicka
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		aaa|x64 = aaa|x64
+		aaa|x86 = aaa|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.aaa|x64.ActiveCfg = aaa|Win32
+		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.aaa|x86.ActiveCfg = Debug|Win32
+		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.aaa|x86.Build.0 = Debug|Win32
 		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Debug|x64.ActiveCfg = Debug|x64
 		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Debug|x64.Build.0 = Debug|x64
-		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Debug|x86.ActiveCfg = Debug|Win32
-		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Debug|x86.Build.0 = Debug|Win32
+		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Debug|x86.ActiveCfg = Release|Win32
+		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Debug|x86.Build.0 = Release|Win32
 		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Release|x64.ActiveCfg = Release|x64
 		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Release|x64.Build.0 = Release|x64
 		{CF4BF5AB-647F-45DC-99BC-CC06665ADB03}.Release|x86.ActiveCfg = Release|Win32
