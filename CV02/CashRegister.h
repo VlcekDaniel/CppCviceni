@@ -16,11 +16,11 @@ public:
 
     Receipt& CreateReceipt(double cost, double dph);
 
-    Receipt& returnReceipt();
+    Receipt& FindReceipt(unsigned id);
 
-    double dejCastku() const;
+    double ReturnReceiptsValue() const;
 
-    double dejCastkuVcDph() const;
+    double ReturnReceiptsValueDPH() const;
 };
 
 #endif // !CASH_REGISTER_H
