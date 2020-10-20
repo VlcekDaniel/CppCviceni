@@ -1,15 +1,16 @@
 #include "CashRegister.h"
 #include <exception>
 
-int CashRegister::idCounter = 1000;
+using namespace std;
 
+int CashRegister::idCounter = 1000;
 
 CashRegister::CashRegister() {
     receipts = new Receipt[10];
     receiptsCount = 0;
 }
 CashRegister::~CashRegister() {
-
+    delete[] receipts;
 }
     Receipt& CashRegister::CreateReceipt(double cost, double dph)
     {
