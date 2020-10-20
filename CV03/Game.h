@@ -11,10 +11,10 @@ private:
 public:
 	Game();
 	~Game();
-	void insertObject(Object* o);
-	int* findIdStaticObjects(double xmin, double xmax, double ymin, double ymax);
-	MovableObject** findMovableObjectInArea(double x, double y, double r);
-	MovableObject** findMovableObjectInArea(double x, double y, double r, double umin, double umax);
+	void InsertObject(Object* o);
+	int* FindIdStaticObjects(double xmin, double xmax, double ymin, double ymax);
+	MovableObject** FindMovableObjectInArea(double x, double y, double r);
+	MovableObject** FindMovableObjectInArea(double x, double y, double r, double umin, double umax);
 };
 #endif GAME_H
 
