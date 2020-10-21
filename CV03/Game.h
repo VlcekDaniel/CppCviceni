@@ -7,7 +7,8 @@ class Game
 {
 private:
 	Object** objects;
-	int counter = 0;
+	int counter;
+	int maxObjects;
 public:
 	Game();
 	~Game();

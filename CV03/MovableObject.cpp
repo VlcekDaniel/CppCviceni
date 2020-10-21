@@ -1,7 +1,6 @@
 #include "MovableObject.h"
 
-MovableObject::MovableObject(int id, double angle) : Object(id) {
-	Object* object = new Object(id);
+MovableObject::MovableObject(int id, double angle) : Object(id),angle(angle) {
 	this->angle = angle;
 }
 
@@ -14,5 +13,7 @@ double MovableObject::GetAngle() const {
 }
 
 void MovableObject::SetAngle(double angle) {
-	this->angle = angle;
+	if (angle > 0 && angle < 2 * 3.1415) {
+		this->angle = angle;
+	}
 }

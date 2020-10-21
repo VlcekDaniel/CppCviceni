@@ -5,15 +5,15 @@ class Object
 {
 private:
 	int id;
-	int x;
-	int y;
+	double x;
+	double y;
 public:
     Object(int id);
     virtual ~Object();
-    void SetX(int x);
-    int GetX() const;
-    void SetY(int y);
-    int GetY() const;
+    void SetX(double x);
+    double GetX() const;
+    void SetY(double y);
+    double GetY() const;
     int GetId() const;
 };
 #endif OBJECT_H

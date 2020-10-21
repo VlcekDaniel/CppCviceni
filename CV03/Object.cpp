@@ -6,16 +6,16 @@
 	Object::~Object() {
 
 	}
-	void Object::SetX(int x) {
+	void Object::SetX(double x) {
 		this->x = x;
 	}
-	void Object::SetY(int y) {
+	void Object::SetY(double y) {
 		this->y = y;
 	}
-	int Object::GetX() const {
+	double Object::GetX() const {
 		return this->x;
 	}
-	int Object::GetY() const {
+	double Object::GetY() const {
 		return this->y;
 	}
 	int Object::GetId() const {

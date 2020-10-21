@@ -2,9 +2,8 @@
 #include "ObstacleType.h"
 
 
-StaticObject::StaticObject(int id, ObstacleType ObstacleType) : Object(id)
+StaticObject::StaticObject(int id, ObstacleType ObstacleType) : Object(id), obstacleType(obstacleType)
 {
-	Object* object = new Object(id);
 	this->obstacleType = obstacleType;	
 }
 
