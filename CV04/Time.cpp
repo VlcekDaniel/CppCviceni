@@ -11,6 +11,9 @@ Time::Time(int hours, int minutes, int seconds)
 		this->minutes = minutes;
 		this->seconds = seconds;
 	}
+	else {
+		throw new exception("out of bounds");
+	}
 }
 
 int Time::compareTo(IComparable* obj) const
@@ -35,5 +38,17 @@ int Time::compareTo(IComparable* obj) const
 
 string Time::toString() const
 {
-	return (to_string(this->hours) + ":" + to_string(this->minutes) + ":" + to_string(this->seconds));
+	string hoursStr = (to_string(this->hours));
+	if (this->hours < 10) {
+		hoursStr = "0" + hoursStr;
+	}
+	string minutesStr = (to_string(this->minutes));
+	if (this->minutes < 10) {
+		minutesStr = "0" + minutesStr;
+	}
+	string secondsStr = (to_string(this->seconds));
+	if (this->seconds < 10) {
+		secondsStr = "0" + secondsStr;
+	}
+	return (hoursStr + ":" + minutesStr + ":" + secondsStr);
 }

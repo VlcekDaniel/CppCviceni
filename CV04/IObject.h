@@ -7,7 +7,7 @@ struct IObject
 {
 public:
 	IObject();
-	~IObject();
+	virtual ~IObject();
 	virtual string toString() const = 0;
 };
 #endif // IOBJECT_H
