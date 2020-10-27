@@ -18,6 +18,10 @@ Time::Time(int hours, int minutes, int seconds)
 
 int Time::CompareTo(IComparable* obj) const
 {
+	if (obj == nullptr) {
+		throw new exception("Time not defined");
+	}
+
 	int timeA = hours * 3600 + minutes * 60 + seconds;
 	int timeB = ((Time*)obj)->hours * 3600 + ((Time*)obj)->minutes * 60 + ((Time*)obj)->seconds;
 		
