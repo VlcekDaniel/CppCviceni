@@ -16,7 +16,7 @@ Time::Time(int hours, int minutes, int seconds)
 	}
 }
 
-int Time::compareTo(IComparable* obj) const
+int Time::CompareTo(IComparable* obj) const
 {
 	int timeA = hours * 3600 + minutes * 60 + seconds;
 	int timeB = ((Time*)obj)->hours * 3600 + ((Time*)obj)->minutes * 60 + ((Time*)obj)->seconds;
@@ -36,7 +36,7 @@ int Time::compareTo(IComparable* obj) const
 	}
 }
 
-string Time::toString() const
+string Time::ToString() const
 {
 	string hoursStr = (to_string(this->hours));
 	if (this->hours < 10) {

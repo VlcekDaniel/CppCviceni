@@ -5,8 +5,7 @@
 struct IComparable : public IObject
 {
 public:
-	IComparable();
 	virtual ~IComparable();
-	virtual int compareTo(IComparable* obj) const = 0;
+	virtual int CompareTo(IComparable* obj) const = 0;
 };
 #endif // ICOMPARABLE_H

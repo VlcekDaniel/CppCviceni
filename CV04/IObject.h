@@ -6,8 +6,7 @@ using namespace std;
 struct IObject
 {
 public:
-	IObject();
 	virtual ~IObject();
-	virtual string toString() const = 0;
+	virtual string ToString() const = 0;
 };
 #endif // IOBJECT_H
