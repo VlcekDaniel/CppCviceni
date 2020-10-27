@@ -12,14 +12,14 @@ Time::Time(int hours, int minutes, int seconds)
 		this->seconds = seconds;
 	}
 	else {
-		throw new exception("out of bounds");
+		throw exception("out of bounds");
 	}
 }
 
 int Time::CompareTo(IComparable* obj) const
 {
 	if (obj == nullptr) {
-		throw new exception("Time not defined");
+		throw exception("Time not defined");
 	}
 
 	int timeA = hours * 3600 + minutes * 60 + seconds;
