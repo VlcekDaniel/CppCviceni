@@ -19,6 +19,7 @@ namespace Model {
 		Node* head;
 	public:
 		Phonebook();
+		~Phonebook();
 		void AddPerson(Entity::Person person);
 		std::string FindPhone(std::string name) const;
 		std::string FindPhone(int id) const;

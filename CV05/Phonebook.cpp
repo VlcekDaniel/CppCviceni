@@ -1,8 +1,10 @@
 #include "Phonebook.h"
 #include "Person.h"
+#include <stdexcept>
 
 using namespace Entity;
 using namespace Model;
+using namespace std;
 
 	Model::Phonebook::Node::Node(Person data,int key)
 	{
@@ -13,6 +15,15 @@ using namespace Model;
 	{
 		head = nullptr;
 	}
+	Model::Phonebook::~Phonebook()
+	{
+		Node* node = head;
+		while (node != nullptr) {
+			Node* tmp = node->next;
+			delete node;
+			node = tmp;
+		}
+	}
 	void Phonebook::AddPerson(Person person)
 	{
 		Node* newNode = new Node(person,person.GetId());
@@ -21,19 +32,15 @@ using namespace Model;
 			head = newNode;
 		}
 		else {
-			Node* n = head;
-			while (n->next != nullptr&& n->key!=person.GetId()){
-				n = n->next;
-			}
-			if(n->key != person.GetId())
-			n->next = newNode;
+			newNode->next = head;
+			head = newNode;
 		}
 	}
 	std::string Phonebook::FindPhone(std::string name) const
 	{
 		if (head == nullptr)
 		{
-			throw std::exception();
+			throw invalid_argument("No name entered");
 		}
 		else {
 			Node* n = head;
@@ -43,14 +50,14 @@ using namespace Model;
 				if(n->next!=nullptr)
 				n = n->next;
 			}
-			throw exception("");
+			throw invalid_argument("Name not found");
 		}
 	}
 	std::string Phonebook::FindPhone(int id) const
 	{
 		if (head == nullptr)
 		{
-			throw std::exception();
+			throw invalid_argument("No id entered");
 		}
 		else {
 			Node* n = head;
@@ -62,6 +69,7 @@ using namespace Model;
 					n = n->next;
 				}
 			}
-			throw exception("");
+			throw invalid_argument("Name not found");
 		}
 	}
+

@@ -3,7 +3,8 @@
 #define PERSON_H
 #include <string>
 using namespace std;
-namespace Entity {
+namespace Entity 
+{
 class Person {
 	private:
 		int id;
@@ -17,6 +18,5 @@ public:
 	string GetPhone() const;
 	string GetName() const;
 	};
-	
 }
 #endif //PERSON_H
