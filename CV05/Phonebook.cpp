@@ -40,9 +40,8 @@ using namespace std;
 	{
 		if (head == nullptr)
 		{
-			throw invalid_argument("No name entered");
+			throw invalid_argument("Phonebook is empty");
 		}
-		else {
 			Node* n = head;
 			while (true) {
 				if ( n->data.GetName()==name)
@@ -51,15 +50,13 @@ using namespace std;
 				n = n->next;
 			}
 			throw invalid_argument("Name not found");
-		}
 	}
 	std::string Phonebook::FindPhone(int id) const
 	{
 		if (head == nullptr)
 		{
-			throw invalid_argument("No id entered");
+			throw invalid_argument("Phonebook is empty");
 		}
-		else {
 			Node* n = head;
 			while (true) {
 			
@@ -69,7 +66,6 @@ using namespace std;
 					n = n->next;
 				}
 			}
-			throw invalid_argument("Name not found");
-		}
+			throw invalid_argument("Id not found");
 	}
 
