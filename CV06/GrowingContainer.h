@@ -14,7 +14,6 @@ public:
 	GrowingContainer();
 	~GrowingContainer();
 	
-	
 	void AddElement(const DataType& o);
 	DataType& operator[](int index);
 	DataType operator[](int index) const;
@@ -34,10 +33,7 @@ GrowingContainer<DataType, StartingValue, GrowingFactor>::GrowingContainer()
 {
 	arraySize = StartingValue;
 	array = new DataType[arraySize];	
-	for (size_t i = 0; i < arraySize; i++)
-	{
-		array[i] = "";
-	}	
+	numberOfValidElements = 0;
 }
 
 template<typename DataType, int StartingValue, int GrowingFactor>
@@ -62,31 +58,20 @@ inline void GrowingContainer<DataType, StartingValue, GrowingFactor>::expandArra
 		{
 			if (i < arraySize) {
 				tempArray[i] = array[i];
-			}
-			else {
-				tempArray[i] = "";
-			}
+			}	
 		}			
 		arraySize= arraySize*GrowingFactor;
 		delete[] array;
 		array = tempArray;
-	
 }
 
 template<typename DataType, int StartingValue, int GrowingFactor>
 inline void GrowingContainer<DataType, StartingValue, GrowingFactor>::AddElement(const DataType& o)
-{
-	int freeSpaces = 0;
-	for (size_t i = 0; i < arraySize; i++)
-	{
-		if (array[i] == "") {
-			array[i] = o;
-			numberOfValidElements++;
-			break;		
-		}
-		freeSpaces++;
-	}
-	if (freeSpaces == arraySize-1) {
+{	
+	
+			array[numberOfValidElements] = o;		
+			numberOfValidElements++;	
+	if (numberOfValidElements == arraySize-1) {
 		expandArray();
 	}
 }
@@ -114,20 +99,14 @@ inline DataType GrowingContainer<DataType, StartingValue, GrowingFactor>::operat
 template<typename DataType, int StartingValue, int GrowingFactor>
 inline unsigned int GrowingContainer<DataType, StartingValue, GrowingFactor>::ReturnNumberOfValidElements() const
 {
-	int count = 0;
-	for (size_t i = 0; i < arraySize; i++)
-	{
-		if (array[i] != "") {
-			count++;
-		}
-	}
-	return count;
+	return numberOfValidElements;
 }
 
 
 template<typename DataType, int StartingValue, int GrowingFactor>
 inline void GrowingContainer<DataType, StartingValue, GrowingFactor>::AddElementOnIndex(int index, const DataType& o)
 {
+	
 	if (index<0 || index>arraySize)
 	{
 		throw std::out_of_range("Index is out of range");
@@ -151,7 +130,6 @@ inline void GrowingContainer<DataType, StartingValue, GrowingFactor>::DeleteElem
 	{
 		throw std::out_of_range("Index is out of range");
 	}
-	array[index] = "";
 	numberOfValidElements--;
 	for (size_t i = index; i < arraySize-1; i++)
 	{
