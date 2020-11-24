@@ -29,10 +29,18 @@ void save(){
 	delete[] arr;
 }
 
-void load(Person* array){
+void load(){
 	ifstream in{ "output.dat", ios_base::in, ios_base::binary};
+	in.seekg(0, ios::end);
+	int size = in.tellg() / sizeof(Person);
+	Person* field = new Person[size];
+	in.seekg(0);
 	if (in.is_open()) {
-		in.read((char *)array,3* sizeof(Person));
+		for (int i = 0; i < size; i++)
+		{
+			in.read((char*)&field[i], sizeof(Person));
+			cout << field[i] << endl;
+		}
 		in.close();
 	}
 	else
@@ -40,16 +48,8 @@ void load(Person* array){
 }
 
 int main(int argc, char** argv) {
-
 	save();
 	cout << "saving" << endl;
-	Person* arr = new Person[3]; 
-	load(arr);
+	load();
 	cout << "loading" << endl;
-
-	for (size_t i = 0; i < 3; i++)
-	{
-		cout << arr[i] << endl;
-	}
-	cout << "print" << endl;
 }

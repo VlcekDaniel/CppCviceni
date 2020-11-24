@@ -1,4 +1,5 @@
 #include "Date.h"
+#include <stdexcept>
 
 Date::Date()
 {
@@ -9,9 +10,15 @@ Date::Date()
 
 Date::Date(int day, int month, int year)
 {
-	this->day = day;
-	this->month = month;
-	this->year = year;
+	if (0 <= day <= 31 && 0 <= month <= 12 && 1900 <= year <= 2100)
+	{
+		this->day = day;
+		this->month = month;
+		this->year = year;
+	}
+	else {
+		throw std::out_of_range("date out of range");
+	}
 }
 
 Date::~Date()
