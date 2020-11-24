@@ -68,12 +68,11 @@ inline void GrowingContainer<DataType, StartingValue, GrowingFactor>::expandArra
 template<typename DataType, int StartingValue, int GrowingFactor>
 inline void GrowingContainer<DataType, StartingValue, GrowingFactor>::AddElement(const DataType& o)
 {	
-	
-			array[numberOfValidElements] = o;		
-			numberOfValidElements++;	
-	if (numberOfValidElements == arraySize-1) {
+	if (numberOfValidElements == arraySize) {
 		expandArray();
 	}
+			array[numberOfValidElements] = o;		
+			numberOfValidElements++;	
 }
 
 template<typename DataType, int StartingValue, int GrowingFactor>
